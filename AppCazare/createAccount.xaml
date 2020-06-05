@@ -1,0 +1,24 @@
+﻿<Window x:Class="AppCazare.createAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCazare"
+        mc:Ignorable="d"
+        Title="Crearea unui cont" Height="350" Width="400"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize">
+    <Grid>
+        <Image  Source="images/lock logo.png" HorizontalAlignment="Left" Height="24" Width="26" VerticalAlignment="Top" Margin="41,184,0,0"/>
+        <Image Source="images/user logo.png"  HorizontalAlignment="Left" Height="24" Width="26" Margin="41,53,0,0" VerticalAlignment="Top" />
+        <Image Source="images/key logo.png" HorizontalAlignment="Left" Height="24" Width="26" VerticalAlignment="Top"  Margin="41,118,0,0"/>
+        <TextBox Name="tbUsername" HorizontalAlignment="Left" Height="23" Margin="72,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260"/>
+        <Label Content="Nume de utilizator nou" HorizontalAlignment="Left" Margin="72,27,0,0" VerticalAlignment="Top" Width="135"/>
+        <PasswordBox Name="pbPass" HorizontalAlignment="Left" Height="23" Margin="72,118,0,0" VerticalAlignment="Top" Width="260"/>
+        <Label Content="Crează parola" HorizontalAlignment="Left" Margin="72,88,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Repetă parola" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="71,153,0,0"/>
+        <PasswordBox Name="pbPassRepeat" HorizontalAlignment="Left" Height="23" Margin="72,180,0,109" VerticalAlignment="Center" Width="260"/>
+        <Button Name="btnCreate" Click="BtnCreate_Click" BorderThickness="0" Content="Crează cont" Background="#2b99ee" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Margin="72,235,0,0" Height="30"/>
+        <Button x:Name="btnInapoi" Click="btnInapoi_Click" BorderThickness="0" Content="Înapoi" Background="#2b99ee" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Margin="72,270,0,0" Height="30"/>
+    </Grid>
+</Window>

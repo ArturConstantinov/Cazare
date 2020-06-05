@@ -1,0 +1,39 @@
+﻿<Window x:Class="AppCazare._celScumpIeftinLoc"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCazare"
+        mc:Ignorable="d"
+        Title="Cel mai scump si ieftin loc de cazare" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="216"  />
+            <ColumnDefinition Width="auto" MinWidth="574" />
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Background="#2b99ee" Grid.Column="0"  HorizontalAlignment="Left" Width="219" Margin="-5,0,0,-5" />
+        <Button x:Name="btnUnitatiDisp" Click="btnUnitatiDisp_Click" Content="Unităţilor de cazare disponibile"  Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,13,0,0" Height="34" BorderThickness="1" Background="#2b99ee" BorderBrush="White" Foreground="White"/>
+        <Button x:Name="btnLocLiber" Click="btnLocLiber_Click"  Content="Locuri libere" HorizontalAlignment="Left"  Grid.Column="0"  VerticalAlignment="Top" Width="209" Margin="0,52,0,0" Height="34" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnPretMed" Click="btnPretMed_Click" Content="Preţul mediu " HorizontalAlignment="Left"  Grid.Column="0"  VerticalAlignment="Top" Width="209" Margin="0,91,0,0" Height="30" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnSILocCazare" Content="Cel mai Scump/Ieftin loc de cazare " HorizontalAlignment="Left" Grid.Column="0"  Width="209" Margin="0,130,0,255" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnDelog" Click="btnDelog_Click" BorderThickness="0" Content="Delogare" Background="#2b99ee" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,379,0,0" Height="30" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnMenu" Click="btnMenu_Click" BorderThickness="0" Content="Menu" Background="#2b99ee" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,349,0,0" Height="30"/>
+        <TextBlock x:Name="tbScump" FontSize="15" Grid.Column="1" HorizontalAlignment="Left" Margin="286.2,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tbIeften" FontSize="15" Grid.Column="1" HorizontalAlignment="Left" Margin="287.2,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Grid.Column="1" HorizontalAlignment="Left" Height="329" Margin="10.2,10,0,0" VerticalAlignment="Top" Width="555">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding codC}" Header="Codul camerei" Width="90"/>
+                <DataGridTextColumn Binding="{Binding codU}" Header="Codul unitatii" Width="90"/>
+                <DataGridTextColumn Binding="{Binding NP}" Header="Numarul de paturi" Width="110"/>
+                <DataGridTextColumn Binding="{Binding pret}" Header="Pretul" Width="50"/>
+                <DataGridTextColumn Binding="{Binding TF}" Header="Prezenta telefonului" Width="120"/>
+                <DataGridTextColumn Binding="{Binding TV}" Header="Prezenta televizorului" Width="120"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btDetermina" BorderThickness="0" Content="Determina" Background="#2b99ee" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="37.2,370,0,0" Height="30" Grid.Column="1" Click="BtDetermina_Click"/>
+
+    </Grid>
+</Window>

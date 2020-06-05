@@ -1,0 +1,60 @@
+﻿<Window x:Class="AppCazare.scoateEvidenta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCazare"
+        mc:Ignorable="d"
+        Title="Scoate de la evidenta" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize" Loaded="Window_Loaded">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="216"  />
+            <ColumnDefinition Width="auto" MinWidth="574" />
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Background="#2b99ee" Grid.Column="0"  HorizontalAlignment="Left" Width="219" Margin="-5,0,0,-5" />
+        <Button x:Name="btnInregClient" Click="btnInregClient_Click_1"   Grid.Column="0"   Content="Înregistrarea clientului" HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,10,0,0" Height="34" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnScEvidenta" Content="Scoate de la evidenţă"  Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,49,0,0" Height="34" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnPrelSej" Click="btnPrelSej_Click" Content="Prelungeşte sejurul"  Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,88,0,0" Height="34" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnExpirat" Content="Creează fişierul Expirat.xml"  Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,127,0,0" Height="34" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White" Click="BtnExpirat_Click"/>
+        <Button x:Name="btnUnitatiDisp" Click="btnUnitatiDisp_Click" Content="Unităţilor de cazare disponibile"  Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,166,0,0" Height="34" BorderThickness="1" Background="#2b99ee" BorderBrush="White" Foreground="White"/>
+        <Button x:Name="btnLocLiber" Click="btnLocLiber_Click"  Content="Locuri libere" HorizontalAlignment="Left"  Grid.Column="0"  VerticalAlignment="Top" Width="209" Margin="0,205,0,0" Height="34" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnPretMed" Click="btnPretMed_Click" Content="Preţul mediu " HorizontalAlignment="Left"  Grid.Column="0"  VerticalAlignment="Top" Width="209" Margin="0,244,0,0" Height="30" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnSILocCazare" Click="btnSILocCazare_Click" Content="Scump/Ieftin loc de cazare " HorizontalAlignment="Left" Grid.Column="0"  Width="209" Margin="0,283,0,102" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnDelog" Click="btnDelog_Click" BorderThickness="0" Content="Delogare" Background="#2b99ee" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,379,0,0" Height="30" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnMenu" Click="btnMenu_Click" BorderThickness="0" Content="Menu" Background="#2b99ee" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,349,0,0" Height="30"/>
+
+        <Label Content="Data" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="163,16,0,0"/>
+        <Label Content="Ziua -" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="133,42,0,0" Height="26" Width="46"/>
+        <TextBox Name="tbZiua" HorizontalAlignment="Left" Height="22" Grid.Column="1" VerticalAlignment="Top" Width="40" Margin="179,46,0,0"/>
+        <Label Content="Luna -" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="133,69,0,0" Height="26" Width="46"/>
+        <TextBox Name="tbLuna" HorizontalAlignment="Left" Height="22" Grid.Column="1" VerticalAlignment="Top" Width="40" Margin="179,73,0,0"/>
+        <Label Content="Anul -" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="133,96,0,0" Height="26" Width="46"/>
+        <TextBox Name="tbAnul" HorizontalAlignment="Left" Height="22" Grid.Column="1" VerticalAlignment="Top" Width="40" Margin="179,100,0,0"/>
+        <Label Content="sau" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="271,73,0,0"/>
+        <Label Content="Codul" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="373,46,0,0"/>
+        <TextBox Name="tbCod" HorizontalAlignment="Left" Height="22" Grid.Column="1" VerticalAlignment="Top" Width="92" Margin="353,77,0,0"/>
+        <DataGrid Name="dataGrid" AutoGenerateColumns="False" Grid.Column="1" HorizontalAlignment="Left" Height="190" Margin="10,127,0,0" VerticalAlignment="Top" Width="555" ItemsSource="{Binding}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding codT}" Header="Cod" Width="35"/>
+                <DataGridTextColumn Binding="{Binding numeT}" Header="Nume" Width="70"/>
+                <DataGridTextColumn Binding="{Binding prenumeT}" Header="Prenume" Width="70"/>
+                <DataGridTextColumn Binding="{Binding SB}" Header="Seria buletinului" Width="100"/>
+                <DataGridTextColumn Binding="{Binding NB}" Header="Num. buletinului" Width="100"/>
+                <DataGridTextColumn Binding="{Binding ziuaC}" Header="Ziua cazarii" Width="80"/>
+                <DataGridTextColumn Binding="{Binding lunaC}" Header="Luna cazarii" Width="80"/>
+                <DataGridTextColumn Binding="{Binding anulC}" Header="Anul cazarii" Width="80"/>
+                <DataGridTextColumn Binding="{Binding ziuaP}" Header="Ziua pleacarii" Width="80"/>
+                <DataGridTextColumn Binding="{Binding lunaP}" Header="Luna pleacarii" Width="80"/>
+                <DataGridTextColumn Binding="{Binding anulP}" Header="Anul pleacarii" Width="80"/>
+                <DataGridTextColumn Binding="{Binding codC}" Header="Camera" Width="50"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="btDelete" BorderThickness="0" Content="Șterge" Background="#2b99ee" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="163,349,0,0" Height="30" Grid.Column="1" Click="BtDelete_Click"/>
+
+
+    </Grid>
+</Window>

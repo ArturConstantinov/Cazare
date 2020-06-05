@@ -1,0 +1,58 @@
+﻿<Window x:Class="AppCazare.inregistrareClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppCazare"
+        mc:Ignorable="d"
+        Title="Inregistrarea clientului nou" Height="450" Width="800" 
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="216"  />
+            <ColumnDefinition Width="auto" MinWidth="574" />
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Background="#2b99ee" Grid.Column="0"  HorizontalAlignment="Left" Width="219" Margin="-5,0,0,-5" />
+        <Button x:Name="btnInregClient"  Grid.Column="0"   Content="Înregistrarea clientului" HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,10,0,0" Height="34" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnScEvidenta" Click="btnScEvidenta_Click" Content="Scoate de la evidenţă"  Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,49,0,0" Height="34" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnPrelSej" Click="btnPrelSej_Click" Content="Prelungeşte sejurul"  Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,88,0,0" Height="34" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnExpirat" Content="Creează fişierul Expirat.xml"  Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,127,0,0" Height="34" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White" Click="BtnExpirat_Click"/>
+        <Button x:Name="btnUnitatiDisp" Click="btnUnitatiDisp_Click" Content="Unităţilor de cazare disponibile"  Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,166,0,0" Height="34" BorderThickness="1" Background="#2b99ee" BorderBrush="White" Foreground="White"/>
+        <Button x:Name="btnLocLiber" Click="btnLocLiber_Click"  Content="Locuri libere" HorizontalAlignment="Left"  Grid.Column="0"  VerticalAlignment="Top" Width="209" Margin="0,205,0,0" Height="34" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnPretMed" Click="btnPretMed_Click" Content="Preţul mediu " HorizontalAlignment="Left"  Grid.Column="0"  VerticalAlignment="Top" Width="209" Margin="0,244,0,0" Height="30" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnSILocCazare" Click="btnSILocCazare_Click" Content="Scump/Ieftin loc de cazare " HorizontalAlignment="Left" Grid.Column="0"  Width="209" Margin="0,283,0,102" BorderThickness="1" Background="#2b99ee" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnDelog" Click="btnDelog_Click" BorderThickness="0" Content="Delogare" Background="#2b99ee" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,379,0,0" Height="30" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnMenu" Click="btnMenu_Click" BorderThickness="0" Content="Menu" Background="#2b99ee" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="0,349,0,0" Height="30"/>
+        
+
+        <Label Content="Informatii Client" FontWeight="Bold" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72.2,16,0,0" Height="26" Width="108"/>
+        <Label Content="Numele clientului" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72.2,45,0,0" Height="26" Width="108"/>
+        <TextBox Name="tbNumeT" HorizontalAlignment="Left" Grid.Column="1" Height="23" VerticalAlignment="Top" Width="170" Margin="72.2,71,0,0"/>
+        <Label Content="Prenumele clientului" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="308.2,45,0,0" Height="26" Width="124"/>
+        <TextBox Name="tbPrenumeT" HorizontalAlignment="Left" Grid.Column="1" Height="24" VerticalAlignment="Top" Width="170" Margin="308.2,71,0,0"/>
+        <Label Content="Seria buletinului" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72.2,113,0,0" Height="26" Width="108"/>
+        <TextBox Name="tbSB" HorizontalAlignment="Left" Grid.Column="1" Height="22" VerticalAlignment="Top" Width="170" Margin="72.2,139,0,0"/>
+        <Label Content="Numarul buletinului" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="308.2,113,0,0" Height="26" Width="164"/>
+        <TextBox Name="tbNB" HorizontalAlignment="Left" Height="22" Grid.Column="1" VerticalAlignment="Top" Width="170" Margin="308.2,139,0,0"/>
+        <Label Content="Codul camerei -" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218.2,325,0,0" Height="26" Width="102"/>
+        <TextBox Name="tbCodC" HorizontalAlignment="Left" Grid.Column="1" Height="23" VerticalAlignment="Top" Width="40" Margin="319.2,328,0,0"/>
+        <Button Name="btInregestrare" BorderThickness="0" Grid.Column="1" Content="Înregistează clientul" Background="#2b99ee" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Margin="208.2,360,0,0" Height="30" Click="BtInregestrare_Click"/>
+        <Label Content="Data cazarii :" FontWeight="Bold" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72.2,179,0,0" Height="26" Width="86"/>
+        <Label Content="Ziua -" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="127.2,213,0,0" Height="26" Width="46"/>
+        <TextBox Name="tbZiuaC" HorizontalAlignment="Left" Height="22" Grid.Column="1" VerticalAlignment="Top" Width="40" Margin="173.2,217,0,0"/>
+        <Label Content="Luna -" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="234.2,213,0,0" Height="26" Width="46"/>
+        <TextBox Name="tbLunaC" HorizontalAlignment="Left" Height="22" Grid.Column="1" VerticalAlignment="Top" Width="40" Margin="280.2,217,0,0"/>
+        <Label Content="Anul -" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346.2,213,0,0" Height="26" Width="46"/>
+        <TextBox Name="tbAnulC" HorizontalAlignment="Left" Height="22" Grid.Column="1" VerticalAlignment="Top" Width="40" Margin="392.2,217,0,0"/>
+        <Label Content="Data plecarii :" FontWeight="Bold" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72.2,243,0,0" Height="26" Width="86"/>
+        <Label Content="Ziua -" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="127.2,279,0,0" Height="26" Width="46"/>
+        <TextBox Name="tbZiuaP" HorizontalAlignment="Left" Height="22" Grid.Column="1" VerticalAlignment="Top" Width="40" Margin="173.2,283,0,0"/>
+        <Label Content="Luna -" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="234.2,279,0,0" Height="26" Width="46"/>
+        <TextBox Name="tbLunaP" HorizontalAlignment="Left" Height="22" Grid.Column="1" VerticalAlignment="Top" Width="40" Margin="280.2,283,0,0"/>
+        <Label Content="Anul -" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346.2,279,0,0" Height="26" Width="46"/>
+        <TextBox Name="tbAnulP" HorizontalAlignment="Left" Height="22" Grid.Column="1" VerticalAlignment="Top" Width="40" Margin="392.2,283,0,0"/>
+
+    </Grid>
+</Window>
